@@ -129,6 +129,26 @@ namespace JukeboxJesterMod.Patches
                     ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartToothless;
                     ___screamingSFX = JukeboxJesterBase.Instance.EndToothless;
                     break;
+
+                case 8: // Nyan Cat (Might be broken)
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartToothless;
+                    ___screamingSFX = JukeboxJesterBase.Instance.EndToothless;
+                    break;
+
+                case 9: // Girls Club
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartToothless;
+                    ___screamingSFX = JukeboxJesterBase.Instance.EndToothless;
+                    break;
+
+                case 10: // Jojo
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartToothless;
+                    ___screamingSFX = JukeboxJesterBase.Instance.EndToothless;
+                    break;
+
+                case 11: // We are number one
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartToothless;
+                    ___screamingSFX = JukeboxJesterBase.Instance.EndToothless;
+                    break;
             }
 
             if (rickyChance < 2)
