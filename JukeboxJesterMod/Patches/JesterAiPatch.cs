@@ -9,6 +9,7 @@ namespace JukeboxJesterMod.Patches
     public static class JesterAiPatch
     {
         public static int randomNumber;
+        public static int rickyChance;
         internal static ManualLogSource mls;
 
         [HarmonyPatch("SetJesterInitialValues")]
@@ -17,7 +18,8 @@ namespace JukeboxJesterMod.Patches
         {
             mls = JukeboxJesterBase.Instance.mls;
             System.Random random = new System.Random();
-            randomNumber = random.Next(1, 8);
+            randomNumber = random.Next(1, 12);
+            rickyChance = random.Next(1, 101);
 
             switch (randomNumber)
             {
@@ -54,6 +56,26 @@ namespace JukeboxJesterMod.Patches
                 case 7: // Toothless
                     ___popUpTimer = 25f;
                     mls.LogInfo("JukeInTheBox will load with Toothless");
+                    break;
+
+                case 8: // Nyan Cat (Might be broken)
+                    ___popUpTimer = 33.7f;
+                    mls.LogInfo("JukeInTheBox will load with Nyan Cat");
+                    break;
+
+                case 9: // Girls Club
+                    ___popUpTimer = 35.26f;
+                    mls.LogInfo("JukeInTheBox will load with Girls Club");
+                    break;
+
+                case 10: // Jojo
+                    ___popUpTimer = 38.74f;
+                    mls.LogInfo("JukeInTheBox will load with Jojo");
+                    break;
+
+                case 11: // We are number one
+                    ___popUpTimer = 26.95f;
+                    mls.LogInfo("JukeInTheBox will load with We are Number one");
                     break;
             }
         }
@@ -108,11 +130,11 @@ namespace JukeboxJesterMod.Patches
                     ___screamingSFX = JukeboxJesterBase.Instance.EndToothless;
                     break;
             }
-            
 
-                    
-            
-
+            if (rickyChance < 2)
+            {
+                ___screamingSFX = JukeboxJesterBase.Instance.EndRicky;
+            }
         }
     }
 }

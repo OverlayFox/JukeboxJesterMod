@@ -15,7 +15,7 @@ namespace JukeboxJesterMod
     {
         private const string modGuid = "overlayFox.JukeboxJesterGuid";
         private const string modName = "Jukebox Jester";
-        private const string modVersion = "1.0.0";
+        private const string modVersion = "1.1.0";
 
         public readonly Harmony harmony = new Harmony(modGuid);
         public static JukeboxJesterBase Instance;
@@ -33,12 +33,21 @@ namespace JukeboxJesterMod
         public AudioClip EndINeedAHero { get; private set; }
         public AudioClip StartMyWay { get; private set; }
         public AudioClip EndMyWay { get; private set; }
-        // public AudioClip StartNyanCat { get; private set; }
-        // public AudioClip EndNyanCat { get; private set; }
+        public AudioClip StartNyanCat { get; private set; }
+        public AudioClip EndNyanCat { get; private set; }
         public AudioClip StartWeAreTheRats { get; private set; }
         public AudioClip EndWeAreTheRats { get; private set; }
         public AudioClip StartToothless { get; private set; }
         public AudioClip EndToothless { get; private set; }
+        public AudioClip StartGirlsClub { get; private set; }
+        public AudioClip EndGirlsClub { get; private set; }
+        public AudioClip StartJojo { get; private set; }
+        public AudioClip EndJojo { get; private set; }
+        public AudioClip EndRicky { get; private set; }
+        public AudioClip StartWano { get; private set; }
+        public AudioClip End1Wano { get; private set; }
+        public AudioClip End2Wano { get; private set; }
+
 
 
         void Awake()
@@ -59,21 +68,29 @@ namespace JukeboxJesterMod
             }
             mls.LogInfo($"Music directory found under '{Location}'");
             mls.LogInfo("Loading Music....");
-            StartFreeBird = SoundTool.GetAudioClip(Location, "FreeBird_Start.wav");
-            End1FreeBird = SoundTool.GetAudioClip(Location, "FreeBird_End01.wav");
-            End2FreeBird = SoundTool.GetAudioClip(Location, "FreeBird_End02.wav");
-            StartChipi = SoundTool.GetAudioClip(Location, "ChipiChipi_Start.wav");
-            EndChipi = SoundTool.GetAudioClip(Location, "ChipiChipi_End.wav");
-            StartINeedAHero = SoundTool.GetAudioClip(Location, "INeedAHero_Start.wav");
-            EndINeedAHero = SoundTool.GetAudioClip(Location, "INeedAHero_End.wav");
-            StartMyWay = SoundTool.GetAudioClip(Location, "MyWay_Start.wav");
-            EndMyWay = SoundTool.GetAudioClip(Location, "MyWay_End.wav");
-            // StartNyanCat = SoundTool.GetAudioClip(Location, "NyanCat_Start.wav");
-            // EndNyanCat = SoundTool.GetAudioClip(Location, "NyanCat_End.wav");
-            StartWeAreTheRats = SoundTool.GetAudioClip(Location, "Rats_Start.wav");
-            EndWeAreTheRats = SoundTool.GetAudioClip(Location, "Rats_End.wav");
-            StartToothless = SoundTool.GetAudioClip(Location, "Toothless_Start.wav");
-            EndToothless = SoundTool.GetAudioClip(Location, "Toothless_End.wav");
+            StartFreeBird = SoundTool.GetAudioClip(Location, "FreeBird_Start.mp3");
+            End1FreeBird = SoundTool.GetAudioClip(Location, "FreeBird_End01.mp3");
+            End2FreeBird = SoundTool.GetAudioClip(Location, "FreeBird_End02.mp3");
+            StartChipi = SoundTool.GetAudioClip(Location, "ChipiChipi_Start.mp3");
+            EndChipi = SoundTool.GetAudioClip(Location, "ChipiChipi_End.mp3");
+            StartINeedAHero = SoundTool.GetAudioClip(Location, "INeedAHero_Start.mp3");
+            EndINeedAHero = SoundTool.GetAudioClip(Location, "INeedAHero_End.mp3");
+            StartMyWay = SoundTool.GetAudioClip(Location, "MyWay_Start.mp3");
+            EndMyWay = SoundTool.GetAudioClip(Location, "MyWay_End.mp3");
+            StartNyanCat = SoundTool.GetAudioClip(Location, "NyanCat_Start.mp3");
+            EndNyanCat = SoundTool.GetAudioClip(Location, "NyanCat_End.mp3");
+            StartWeAreTheRats = SoundTool.GetAudioClip(Location, "Rats_Start.mp3");
+            EndWeAreTheRats = SoundTool.GetAudioClip(Location, "Rats_End.mp3");
+            StartToothless = SoundTool.GetAudioClip(Location, "Toothless_Start.mp3");
+            EndToothless = SoundTool.GetAudioClip(Location, "Toothless_End.mp3");
+            StartGirlsClub = SoundTool.GetAudioClip(Location, "GirlsClub_Start.mp3");
+            EndGirlsClub = SoundTool.GetAudioClip(Location, "GirlsClub_End.mp3");
+            StartJojo = SoundTool.GetAudioClip(Location, "Jojo_Start.mp3");
+            EndJojo = SoundTool.GetAudioClip(Location, "Jojo_End.mp3");
+            EndRicky = SoundTool.GetAudioClip(Location, "Ricky.mp3");
+            StartWano = SoundTool.GetAudioClip(Location, "WeAreNumberOne_Start.mp3");
+            End1Wano = SoundTool.GetAudioClip(Location, "WeAreNumberOne_End01.mp3");
+            End2Wano = SoundTool.GetAudioClip(Location, "WeAreNumberOne_End02.mp3");
             mls.LogInfo("Loaded all songs");
 
             _ = Config.Bind("Mod", "EnableMod", true, "Enables the Mod");
