@@ -25,32 +25,32 @@ namespace JukeboxJesterMod.Patches
             {
                 case 1: //FreeBird
                 case 2:
-                    ___popUpTimer = 62f;
+                    ___popUpTimer = 62.5f;
                     mls.LogInfo("JukeInTheBox will load with FreeBird Version 1");
                     break;
 
                 case 3: // ChipChipiChapaChapa
-                    ___popUpTimer = 39f;
+                    ___popUpTimer = 40.03f;
                     mls.LogInfo("JukeInTheBox will load with ChipChipiChapaChapa");
                     break;
 
                 case 4: // I need a hero
-                    ___popUpTimer = 31f;
+                    ___popUpTimer = 31.58f;
                     mls.LogInfo("JukeInTheBox will load with I need a hero");
                     break;
 
                 case 5: // My Way
-                    ___popUpTimer = 50f;
+                    ___popUpTimer = 50.47f;
                     mls.LogInfo("JukeInTheBox will load with My Way");
                     break;
 
                 case 6: // We are the rats
-                    ___popUpTimer = 37f;
+                    ___popUpTimer = 37.13f;
                     mls.LogInfo("JukeInTheBox will load with We are the rats");
                     break;
 
                 case 7: // Toothless
-                    ___popUpTimer = 25f;
+                    ___popUpTimer = 25.58f;
                     mls.LogInfo("JukeInTheBox will load with Toothless");
                     break;
 

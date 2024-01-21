@@ -5,6 +5,7 @@ using HarmonyLib;
 using JukeboxJesterMod.Patches;
 using LCSoundTool;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
