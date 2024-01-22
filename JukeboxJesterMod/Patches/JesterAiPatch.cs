@@ -18,8 +18,10 @@ namespace JukeboxJesterMod.Patches
         {
             mls = JukeboxJesterBase.Instance.mls;
             System.Random random = new System.Random();
-            randomNumber = random.Next(1, 13);
-            rickyChance = random.Next(1, 101);
+            // randomNumber = random.Next(1, 12);
+            // rickyChance = random.Next(1, 101);
+            randomNumber = 8;
+            rickyChance = 100;
 
             switch (randomNumber)
             {
@@ -64,13 +66,8 @@ namespace JukeboxJesterMod.Patches
                     mls.LogInfo("JukeInTheBox will load with Girls Club");
                     break;
 
-                case 10: // Jojo
-                    ___popUpTimer = 38.74f;
-                    mls.LogInfo("JukeInTheBox will load with Jojo");
-                    break;
-
-                case 11: // We are number one
-                case 12:
+                case 10: // We are number one
+                case 11:
                     ___popUpTimer = 26.95f;
                     mls.LogInfo("JukeInTheBox will load with We are Number one");
                     break;
@@ -87,75 +84,70 @@ namespace JukeboxJesterMod.Patches
                 return;
             }
             ___popUpSFX = null;
-            ___farAudio.volume = (float)JukeboxJesterBase.Instance.Volume.Value / 100f;
-            ___creatureVoice.volume = (float)JukeboxJesterBase.Instance.Volume.Value / 100f;
+            ___farAudio.volume = (float)JukeboxJesterBase.Instance.Volume.Value / 10f;
+            ___creatureVoice.volume = (float)JukeboxJesterBase.Instance.Volume.Value / 10f;
 
             switch(randomNumber)
             {
                 case 1: //FreeBird Version 1
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartFreeBird;
-                    ___screamingSFX = JukeboxJesterBase.Instance.End1FreeBird;
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["FreeBird_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["FreeBird_End01"];
                     break;
 
                 case 2: //FreeBird Version 2
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartFreeBird;
-                    ___screamingSFX = JukeboxJesterBase.Instance.End2FreeBird;
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["FreeBird_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["FreeBird_End02"];
                     break;
 
                 case 3: // ChipChipiChapaChapa
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartChipi;
-                    ___screamingSFX = JukeboxJesterBase.Instance.EndChipi;
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["ChipiChipi_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["ChipiChipi_End"];
                     break;
 
                 case 4: // I need a hero
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartINeedAHero;
-                    ___screamingSFX = JukeboxJesterBase.Instance.EndINeedAHero;
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["INeedAHero_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["INeedAHero_End"];
                     break;
 
                 case 5: // My Way
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartMyWay;
-                    ___screamingSFX = JukeboxJesterBase.Instance.EndMyWay;
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["MyWay_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["MyWay_End"];
                     break;
 
                 case 6: // We are the rats
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartWeAreTheRats;
-                    ___screamingSFX = JukeboxJesterBase.Instance.EndWeAreTheRats;
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["Rats_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["Rats_End"];
                     break;
 
                 case 7: // Toothless
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartToothless;
-                    ___screamingSFX = JukeboxJesterBase.Instance.EndToothless;
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["Toothless_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["Toothless_End"];
                     break;
 
                 case 8: // Nyan Cat (Might be broken)
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartNyanCat;
-                    ___screamingSFX = JukeboxJesterBase.Instance.EndNyanCat;
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["NyanCat_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["NyanCat_End"];
                     break;
 
                 case 9: // Girls Club
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartGirlsClub;
-                    ___screamingSFX = JukeboxJesterBase.Instance.EndGirlsClub;
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["GirlsClub_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["GirlsClub_End"];
                     break;
 
-                case 10: // Jojo
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartJojo;
-                    ___screamingSFX = JukeboxJesterBase.Instance.EndJojo;
+                case 10: // We are number one Version 1
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["WeAreNumberOne_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["WeAreNumberOne_End01"];
                     break;
 
-                case 11: // We are number one Version 1
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartWano;
-                    ___screamingSFX = JukeboxJesterBase.Instance.End1Wano;
-                    break;
-
-                case 12: // We are number one Version 2
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.StartWano;
-                    ___screamingSFX = JukeboxJesterBase.Instance.End2Wano;
+                case 11: // We are number one Version 2
+                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["WeAreNumberOne_Start"];
+                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["WeAreNumberOne_End02"];
                     break;
             }
 
             if (rickyChance < 2)
             {
-                ___screamingSFX = JukeboxJesterBase.Instance.EndRicky;
+                ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["Ricky"];
             }
         }
     }

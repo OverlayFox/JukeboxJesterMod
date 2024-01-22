@@ -40,8 +40,9 @@
     <Reference Include="BepInEx">
       <HintPath>D:\Steam\steamapps\common\Lethal Company\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="LC_SoundTool">
-      <HintPath>D:\Steam\steamapps\common\Lethal Company\BepInEx\plugins\LC_SoundTool.dll</HintPath>
+    <Reference Include="LC_SoundTool, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dependencies\LC_SoundTool.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
