@@ -38,45 +38,17 @@ namespace JukeboxJesterMod
             "INeedAHero_End.mp3",
             "MyWay_Start.mp3",
             "MyWay_End.mp3",
-            "NyanCat_Start.mp3",
-            "NyanCat_End.mp3",
             "Rats_Start.mp3",
             "Rats_End.mp3",
             "Toothless_Start.mp3",
             "Toothless_End.mp3",
             "GirlsClub_Start.mp3",
             "GirlsClub_End.mp3",
-            "Jojo_Start.mp3",
-            "Jojo_End.mp3",
             "Ricky.mp3",
             "WeAreNumberOne_Start.mp3",
             "WeAreNumberOne_End01.mp3",
             "WeAreNumberOne_End02.mp3",
         };
-        //public AudioClip StartFreeBird { get; private set; }
-        //public AudioClip End1FreeBird { get; private set; }
-        //public AudioClip End2FreeBird { get; private set; }
-        //public AudioClip StartChipi { get; private set; }
-        //public AudioClip EndChipi { get; private set; }
-        //public AudioClip StartINeedAHero { get; private set; }
-        //public AudioClip EndINeedAHero { get; private set; }
-        //public AudioClip StartMyWay { get; private set; }
-        //public AudioClip EndMyWay { get; private set; }
-        //public AudioClip StartNyanCat { get; private set; }
-        //public AudioClip EndNyanCat { get; private set; }
-        //public AudioClip StartWeAreTheRats { get; private set; }
-        //public AudioClip EndWeAreTheRats { get; private set; }
-        //public AudioClip StartToothless { get; private set; }
-        //public AudioClip EndToothless { get; private set; }
-        //public AudioClip StartGirlsClub { get; private set; }
-        //public AudioClip EndGirlsClub { get; private set; }
-        //public AudioClip StartJojo { get; private set; }
-        //public AudioClip EndJojo { get; private set; }
-        //public AudioClip EndRicky { get; private set; }
-        //public AudioClip StartWano { get; private set; }
-        //public AudioClip End1Wano { get; private set; }
-        //public AudioClip End2Wano { get; private set; }
-
 
         void Awake()
         {
@@ -95,11 +67,10 @@ namespace JukeboxJesterMod
                 return;
             }
             mls.LogInfo($"Music directory found under '{Location}'");
+            
             mls.LogInfo("Loading Music....");
-
             foreach (string audio in AudioStrings)
             {
-                mls.LogInfo($"Trying to load {audio.Substring(0, audio.Length - 4)}");
                 string filePath = Path.Combine(Location, audio);
                 if (!File.Exists(filePath))
                 {
@@ -108,29 +79,6 @@ namespace JukeboxJesterMod
                 }
                 AudioFiles[audio.Substring(0, audio.Length - 4)] = SoundTool.GetAudioClip(Location, audio);
             }
-            //StartFreeBird = SoundTool.GetAudioClip(Location, "FreeBird_Start.mp3");
-            //End1FreeBird = SoundTool.GetAudioClip(Location, "FreeBird_End01.mp3");
-            //End2FreeBird = SoundTool.GetAudioClip(Location, "FreeBird_End02.mp3");
-            //StartChipi = SoundTool.GetAudioClip(Location, "ChipiChipi_Start.mp3");
-            //EndChipi = SoundTool.GetAudioClip(Location, "ChipiChipi_End.mp3");
-            //StartINeedAHero = SoundTool.GetAudioClip(Location, "INeedAHero_Start.mp3");
-            //EndINeedAHero = SoundTool.GetAudioClip(Location, "INeedAHero_End.mp3");
-            //StartMyWay = SoundTool.GetAudioClip(Location, "MyWay_Start.mp3");
-            //EndMyWay = SoundTool.GetAudioClip(Location, "MyWay_End.mp3");
-            //StartNyanCat = SoundTool.GetAudioClip(Location, "NyanCat_Start.mp3");
-            //EndNyanCat = SoundTool.GetAudioClip(Location, "NyanCat_End.mp3");
-            //StartWeAreTheRats = SoundTool.GetAudioClip(Location, "Rats_Start.mp3");
-            //EndWeAreTheRats = SoundTool.GetAudioClip(Location, "Rats_End.mp3");
-            //StartToothless = SoundTool.GetAudioClip(Location, "Toothless_Start.mp3");
-            //EndToothless = SoundTool.GetAudioClip(Location, "Toothless_End.mp3");
-            //StartGirlsClub = SoundTool.GetAudioClip(Location, "GirlsClub_Start.mp3");
-            //EndGirlsClub = SoundTool.GetAudioClip(Location, "GirlsClub_End.mp3");
-            //StartJojo = SoundTool.GetAudioClip(Location, "Jojo_Start.mp3");
-            //EndJojo = SoundTool.GetAudioClip(Location, "Jojo_End.mp3");
-            //EndRicky = SoundTool.GetAudioClip(Location, "Ricky.mp3");
-            //StartWano = SoundTool.GetAudioClip(Location, "WeAreNumberOne_Start.mp3");
-            //End1Wano = SoundTool.GetAudioClip(Location, "WeAreNumberOne_End01.mp3");
-            //End2Wano = SoundTool.GetAudioClip(Location, "WeAreNumberOne_End02.mp3");
             mls.LogInfo("Loaded all songs");
 
             _ = Config.Bind("Mod", "EnableMod", true, "Enables the Mod");

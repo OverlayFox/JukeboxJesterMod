@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using UnityEngine;
 using BepInEx.Logging;
+using System;
 
 
 namespace JukeboxJesterMod.Patches
@@ -17,59 +18,49 @@ namespace JukeboxJesterMod.Patches
         public static void SetSong(ref float ___popUpTimer)
         {
             mls = JukeboxJesterBase.Instance.mls;
-            System.Random random = new System.Random();
-            // randomNumber = random.Next(1, 12);
-            // rickyChance = random.Next(1, 101);
-            randomNumber = 8;
-            rickyChance = 100;
-
+            
             switch (randomNumber)
             {
                 case 1: //FreeBird
                 case 2:
                     ___popUpTimer = 62.5f;
-                    mls.LogInfo("JukeInTheBox will load with FreeBird Version 1");
+                    mls.LogInfo($"JukeInTheBox will load with FreeBird and a popUpTimer of {___popUpTimer}");
                     break;
 
                 case 3: // ChipChipiChapaChapa
                     ___popUpTimer = 40.03f;
-                    mls.LogInfo("JukeInTheBox will load with ChipChipiChapaChapa");
+                    mls.LogInfo($"JukeInTheBox will load with ChipChipiChapaChapa and a popUpTimer of {___popUpTimer}");
                     break;
 
                 case 4: // I need a hero
                     ___popUpTimer = 31.58f;
-                    mls.LogInfo("JukeInTheBox will load with I need a hero");
+                    mls.LogInfo($"JukeInTheBox will load with I need a hero and a popUpTimer of {___popUpTimer}");
                     break;
 
                 case 5: // My Way
                     ___popUpTimer = 50.47f;
-                    mls.LogInfo("JukeInTheBox will load with My Way");
+                    mls.LogInfo($"JukeInTheBox will load with My Way and a popUpTimer of {___popUpTimer}");
                     break;
 
                 case 6: // We are the rats
                     ___popUpTimer = 37.13f;
-                    mls.LogInfo("JukeInTheBox will load with We are the rats");
+                    mls.LogInfo($"JukeInTheBox will load with We are the rats and a popUpTimer of {___popUpTimer}");
                     break;
 
                 case 7: // Toothless
                     ___popUpTimer = 25.58f;
-                    mls.LogInfo("JukeInTheBox will load with Toothless");
+                    mls.LogInfo($"JukeInTheBox will load with Toothless and a popUpTimer of {___popUpTimer}");
                     break;
 
-                case 8: // Nyan Cat (Might be broken)
-                    ___popUpTimer = 33.7f;
-                    mls.LogInfo("JukeInTheBox will load with Nyan Cat");
-                    break;
-
-                case 9: // Girls Club
+                case 8: // Girls Club
                     ___popUpTimer = 35.26f;
-                    mls.LogInfo("JukeInTheBox will load with Girls Club");
+                    mls.LogInfo($"JukeInTheBox will load with Girls Club and a popUpTimer of {___popUpTimer}");
                     break;
 
-                case 10: // We are number one
-                case 11:
+                case 9: // We are number one
+                case 10:
                     ___popUpTimer = 26.95f;
-                    mls.LogInfo("JukeInTheBox will load with We are Number one");
+                    mls.LogInfo($"JukeInTheBox will load with We are Number one and a popUpTimer of {___popUpTimer}");
                     break;
             }
         }
@@ -83,6 +74,9 @@ namespace JukeboxJesterMod.Patches
             {
                 return;
             }
+            System.Random random = new System.Random(Environment.TickCount);
+            randomNumber = random.Next(1, 11);
+            rickyChance = random.Next(1, 101);
             ___popUpSFX = null;
             ___farAudio.volume = (float)JukeboxJesterBase.Instance.Volume.Value / 10f;
             ___creatureVoice.volume = (float)JukeboxJesterBase.Instance.Volume.Value / 10f;
@@ -124,28 +118,23 @@ namespace JukeboxJesterMod.Patches
                     ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["Toothless_End"];
                     break;
 
-                case 8: // Nyan Cat (Might be broken)
-                    ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["NyanCat_Start"];
-                    ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["NyanCat_End"];
-                    break;
-
-                case 9: // Girls Club
+                case 8: // Girls Club
                     ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["GirlsClub_Start"];
                     ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["GirlsClub_End"];
                     break;
 
-                case 10: // We are number one Version 1
+                case 9: // We are number one Version 1
                     ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["WeAreNumberOne_Start"];
                     ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["WeAreNumberOne_End01"];
                     break;
 
-                case 11: // We are number one Version 2
+                case 10: // We are number one Version 2
                     ___popGoesTheWeaselTheme = JukeboxJesterBase.Instance.AudioFiles["WeAreNumberOne_Start"];
                     ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["WeAreNumberOne_End02"];
                     break;
             }
 
-            if (rickyChance < 2)
+            if (rickyChance <= 1)
             {
                 ___screamingSFX = JukeboxJesterBase.Instance.AudioFiles["Ricky"];
             }
